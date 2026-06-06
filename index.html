@@ -1,0 +1,88 @@
+html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Bangunan Makassar - Toko Bahan Bangunan Online</title>
+    <style>
+        /* Gaya tampilan dasar agar website terlihat rapi */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; }
+        header { background-color: #d32f2f; color: white; padding: 20px; text-align: center; }
+        nav { background-color: #333; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        .hero { background-color: #f4f4f4; padding: 40px 20px; text-align: center; }
+        .container { padding: 20px; max-width: 1200px; margin: auto; }
+        .produk-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; }
+        .produk-kartu { border: 1px solid #ddd; padding: 15px; width: 250px; border-radius: 8px; text-align: center; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); }
+        .produk-kartu h3 { margin: 10px 0; }
+        .harga { color: #d32f2f; font-weight: bold; font-size: 1.1em; }
+        .btn-beli { display: inline-block; background-color: #25d366; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; margin-top: 10px; font-weight: bold; }
+        footer { background-color: #333; color: white; text-align: center; padding: 15px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <!-- Bagian Kepala / Header -->
+    <header>
+        <h1>Go Bangunan Makassar</h1>
+        <p>Solusi Kebutuhan Bahan Bangunan Anda di Kota Makassar</p>
+    </header>
+
+    <!-- Menu Navigasi -->
+    <nav>
+        <a href="#">Beranda</a>
+        <a href="#produk">Produk</a>
+        <a href="#tentang">Tentang Kami</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+
+    <!-- Banner Promosi Utama -->
+    <section class="hero">
+        <h2>Selamat Datang di Toko Online Kami</h2>
+        <p>Menyediakan Baut, Sekrup, Perkakas, dan Perlengkapan Rumah berkualitas dengan harga terbaik.</p>
+    </section>
+
+    <!-- Bagian Daftar Produk -->
+    <section id="produk" class="container">
+        <h2 style="text-align: center;">Produk Unggulan</h2>
+        <div class="produk-grid">
+            
+            <!-- Produk 1 -->
+            <div class="produk-kartu">
+                <h3>Gerobak Pasir Merah CPT 16kg</h3>
+                <p class="harga">Rp 580.000</p>
+                <a href="https://wa.me" class="btn-green btn-beli" target="_blank">Beli via WhatsApp</a>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="produk-kartu">
+                <h3>Gerobak Pasir Merah</h3>
+                <p class="harga">Rp 340.000</p>
+                <a href="https://wa.me" class="btn-green btn-beli" target="_blank">Beli via WhatsApp</a>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="produk-kartu">
+                <h3>Ban Luar Artco</h3>
+                <p class="harga">Rp 60.000</p>
+                <a href="https://wa.me" class="btn-green btn-beli" target="_blank">Beli via WhatsApp</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Bagian Informasi Kontak -->
+    <section id="kontak" class="container" style="text-align: center; margin-top: 40px;">
+        <h2>Hubungi Kami</h2>
+        <p>Alamat: Jl. Anuang No 63 D, Kota Makassar, Sulawesi Selatan</p>
+        <p>WhatsApp: 0823-4843-3232</p>
+    </section>
+
+    <!-- Bagian Kaki / Footer -->
+    <footer>
+        <p>&copy; 2026 Go Bangunan Makassar. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
