@@ -15,7 +15,8 @@
         .hero { background-color: #f4f4f4; padding: 40px 20px; text-align: center; }
         .container { padding: 20px; max-width: 1200px; margin: auto; }
         .produk-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px; align-items: stretch; }
-        .produk-kartu { border: 1px solid #ddd; padding: 15px; width: 250px; border-radius: 8px; text-align: center; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between; background: #fff; }
+        .produk-kartu { border: 1px solid #ddd; padding: 15px; width: 250px; border-radius: 8px; text-align: center; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); display: flex; flex-direction: column; justify-content: space-between; background: #fff; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .produk-kartu:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); border-color: #00ff40; }
         .produk-kartu h3 { margin: 10px 0; font-size: 1.1em; }
         .produk-kartu img { width: 100%; height: 220px; object-fit: contain; background-color: #f9f9f9; border-radius: 5px; margin-bottom: 10px; }
         .harga { color: #d32f2f; font-weight: bold; font-size: 1.2em; margin: 10px 0; }
@@ -107,10 +108,7 @@
         <h2>Selamat Datang di Toko Online Kami</h2>
         <p>Menyediakan Baut, Sekrup, Perkakas, dan Perlengkapan Rumah berkualitas dengan harga terbaik.</p>
         
-        <!-- Kotak Pencarian Produk -->
-        <div style="margin-top: 20px;">
-            <input type="text" id="inputCari" onkeyup="cariProduk()" placeholder="Cari produk di sini... (misal: gerobak, ban, bearing)" style="width: 80%; max-width: 500px; padding: 12px 20px; font-size: 16px; border: 2px solid #ddd; border-radius: 25px; outline: none; box-shadow: 2px 2px 5px rgba(0,0,0,0.05);">
-        </div>
+        
     </section>
 
     <!-- Bagian Keunggulan Toko Go Bangunan -->
@@ -141,6 +139,11 @@
         </div>
     </section>
 
+    <!-- Kotak Pencarian Produk Pindah Ke Sini -->
+    <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+        <input type="text" id="inputCari" onkeyup="cariProduk()" placeholder="Cari produk di sini... (misal: gerobak, ban, bearing)" style="width: 80%; max-width: 500px; padding: 12px 20px; font-size: 16px; border: 2px solid #ddd; border-radius: 25px; outline: none; box-shadow: 2px 2px 5px rgba(0,0,0,0.05);">
+    </div>
+
     <!-- Bagian Daftar Produk -->
     <section id="produk" class="container">
         <h2 style="text-align: center;">Produk Unggulan</h2>
@@ -149,7 +152,7 @@
             <!-- Produk 1 -->
             <div class="produk-kartu">
                 <img src="gerobak-cpt.jpg?v=2" alt="Gerobak CPT">
-                <h3>Gerobak Pasir Merah CPT 16kg</h3>
+                <h3>Gerobak Pasir Merah CPT 16 Kg</h3>
                 <p class="harga">Rp 570.000/Set</p>
                 <!-- Pesan Otomatis Produk 1 -->
                 <a href="https://wa.me/6282348433232?text=Halo%20Go%20Bangunan,%20saya%20ingin%20membeli%20Gerobak%20CPT" class="btn-beli" target="_blank">Beli via WhatsApp</a>
@@ -158,7 +161,7 @@
             <!-- Produk 2 -->
             <div class="produk-kartu">
                 <img src="gerobak-viking.jpg?v=2" alt="Gerobak Viking">
-                <h3>Gerobak Pasir Merah</h3>
+                <h3>Gerobak Pasir Merah 10 Kg</h3>
                 <p class="harga">Rp 340.000/Set</p>
                 <!-- Pesan Otomatis Produk 2 -->
                 <a href="https://wa.me/6282348433232?text=Halo%20Go%20Bangunan,%20saya%20ingin%20membeli%20Gerobak%20Viking" class="btn-beli" target="_blank">Beli via WhatsApp</a>
@@ -214,6 +217,12 @@
         <h2>Hubungi Kami</h2>
         <p><strong>Alamat:</strong> Jl. Anuang No 63 D, Kota Makassar, Sulawesi Selatan</p>
         <p><strong>WhatsApp:</strong> +62 823-4843-3232</p>
+
+        <!-- Status Jam Operasional Otomatis -->
+        <p style="font-size: 1.1em; font-weight: bold; margin-top: 15px;">
+            Status Toko: <span id="statusToko" style="padding: 5px 12px; border-radius: 15px; color: white; font-size: 0.9em;">Memeriksa...</span>
+        </p>
+        <p style="font-size: 0.9em; color: #666; margin-top: 5px;">Jam Operasional: Senin - Sabtu (08:00 - 17:00 WITA) | Minggu Tutup</p>
 
         <!-- Tombol Sosial Media Go Bangunan -->
         <div class="sosmed-wadah">
@@ -274,5 +283,30 @@
     
     <!-- Tombol WhatsApp Melayang -->
     <a href="https://wa.me/6282348433232?text=Halo%20Go%20Bangunan,%20saya%20ingin%20bertanya?" class="wa-melayang" target="_blank" title="Chat via WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    
+    <script>
+        function perbaruiStatusToko() {
+            let elemenStatus = document.getElementById("statusToko");
+            
+            // Mengambil waktu lokal saat ini berdasarkan zona waktu Asia/Makassar (WITA)
+            let opsiWaktu = { timeZone: "Asia/Makassar", hour: "2-digit", hour12: false };
+            let opsiHari = { timeZone: "Asia/Makassar", weekday: "long" };
+            
+            let jamSekarang = parseInt(new Intl.DateTimeFormat("en-US", opsiWaktu).format(new Date()));
+            let hariSekarang = new Intl.DateTimeFormat("id-ID", opsiHari).format(new Date());
+
+            // Logika Operasional: Senin-Sabtu jam 08:00 sampai 17:00 WITA
+            if (hariSekarang !== "Minggu" && jamSekarang >= 8 && jamSekarang < 17) {
+                elemenStatus.innerText = "🔴 Buka Sekarang";
+                elemenStatus.style.backgroundColor = "#25d366"; // Warna Hijau WA
+            } else {
+                elemenStatus.innerText = "⚪ Tutup (Silakan Chat WA)";
+                elemenStatus.style.backgroundColor = "#d32f2f"; // Warna Merah
+            }
+        }
+
+        // Jalankan fungsi otomatis saat halaman web dibuka pembeli
+        window.addEventListener("DOMContentLoaded", perbaruiStatusToko);
+    </script>
 </body>
 </html>
