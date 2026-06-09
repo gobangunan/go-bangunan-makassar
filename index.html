@@ -295,12 +295,12 @@
             let jamSekarang = parseInt(new Intl.DateTimeFormat("en-US", opsiWaktu).format(new Date()));
             let hariSekarang = new Intl.DateTimeFormat("id-ID", opsiHari).format(new Date());
 
-            // Logika Operasional: Senin-Sabtu jam 08:00 sampai 17:00 WITA
+             // Logika Operasional: Senin-Sabtu jam 08:00 sampai 17:00 WITA
             if (hariSekarang !== "Minggu" && jamSekarang >= 8 && jamSekarang < 17) {
-                elemenStatus.innerText = "🔴 Buka Sekarang";
+                elemenStatus.innerText = "🟢 Buka Sekarang"; // Diubah menjadi emoji bulat hijau
                 elemenStatus.style.backgroundColor = "#25d366"; // Warna Hijau WA
             } else {
-                elemenStatus.innerText = "⚪ Tutup (Silakan Chat WA)";
+                elemenStatus.innerText = "🔴 Tutup (Silakan Chat WA)"; // Diubah menjadi emoji bulat merah
                 elemenStatus.style.backgroundColor = "#d32f2f"; // Warna Merah
             }
         }
