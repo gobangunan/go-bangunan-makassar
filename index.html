@@ -69,9 +69,17 @@
 
         /* Gaya Ikon Sosial Media di Kontak */
         .sosmed-wadah { margin-top: 15px; display: flex; justify-content: center; gap: 20px; }
-        .sosmed-link { text-decoration: none; font-weight: bold; padding: 8px 16px; border-radius: 20px; color: white; font-size: 14px; }
-        .fb-warna { background-color: #1877f2; }
-        .ig-warna { background-color: #e1306c; }
+        .sosmed-link { text-decoration: none; font-weight: bold; padding: 5px 10px; color: #333; font-size: 18px; display: inline-flex; align-items: center; gap: 8px; transition: opacity 0.3s; }
+        .sosmed-link:hover { opacity: 0.7; }
+        /* Membuat murni logo Instagram asli yang berwarna gradasi pink/merah */
+        .sosmed-link .fa-instagram { color: #e1306c; font-size: 26px; }
+        
+        /* Gaya Baris Keunggulan Toko */
+        .keunggulan-baris { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px; margin-bottom: 10px; }
+        .keunggulan-kotak { background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 20px; width: 250px; text-align: center; box-shadow: 2px 2px 5px rgba(0,0,0,0.05); }
+        .keunggulan-kotak i { font-size: 35px; color: #d32f2f; margin-bottom: 12px; display: block; }
+        .keunggulan-kotak h4 { margin: 5px 0; font-size: 1.1em; color: #333; }
+        .keunggulan-kotak p { margin: 5px 0 0 0; font-size: 0.9em; color: #666; line-height: 1.4; }
     </style>
     
     <!-- Pustaka Ikon Font Awesome untuk Logo WA Resmi -->
@@ -100,6 +108,34 @@
         <!-- Kotak Pencarian Produk -->
         <div style="margin-top: 20px;">
             <input type="text" id="inputCari" onkeyup="cariProduk()" placeholder="Cari produk di sini... (misal: gerobak, ban, bearing)" style="width: 80%; max-width: 500px; padding: 12px 20px; font-size: 16px; border: 2px solid #ddd; border-radius: 25px; outline: none; box-shadow: 2px 2px 5px rgba(0,0,0,0.05);">
+        </div>
+    </section>
+
+    <!-- Bagian Keunggulan Toko Go Bangunan -->
+    <section class="container" style="padding-bottom: 0;">
+        <div class="keunggulan-baris">
+            
+            <!-- Keunggulan 1 -->
+            <div class="keunggulan-kotak">
+                <i class="fas fa-truck"></i>
+                <h4>Pengiriman Luas</h4>
+                <p>Siap kirim via kurir instan untuk area dekat, serta mendukung pengiriman kargo aman untuk luar daerah.</p>
+            </div>
+            
+            <!-- Keunggulan 2 -->
+            <div class="keunggulan-kotak">
+                <i class="fas fa-award"></i>
+                <h4>Kualitas Terjamin</h4>
+                <p>Menyediakan perkakas dan bahan pertukangan original dengan mutu terbaik untuk proyek Anda.</p>
+            </div>
+            
+            <!-- Keunggulan 3 -->
+            <div class="keunggulan-kotak">
+                <i class="fas fa-tags"></i>
+                <h4>Harga Bersaing</h4>
+                <p>Dapatkan penawaran harga terbaik untuk pembelian eceran maupun kuantitas grosir besar.</p>
+            </div>
+            
         </div>
     </section>
 
@@ -180,7 +216,7 @@
         <!-- Tombol Sosial Media Go Bangunan -->
         <div class="sosmed-wadah">
         <!-- Ganti nama_akun_anda dengan ID Instagram asli toko Anda -->
-        <a href="https://instagram.com/gobangunan" class="sosmed-link ig-warna" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://instagram.com/gobangunan" class="sosmed-link" target="_blank" title="Instagram Go Bangunan"><i class="fab fa-instagram"></i></a>
         </div>
         
         <!-- Peta Toko Jl Anuang No 63D Terpasang Otomatis -->
