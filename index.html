@@ -66,6 +66,11 @@ html
     <section class="hero">
         <h2>Selamat Datang di Toko Online Kami</h2>
         <p>Menyediakan Baut, Sekrup, Perkakas, dan Perlengkapan Rumah berkualitas dengan harga terbaik.</p>
+        
+        <!-- Kotak Pencarian Produk -->
+        <div style="margin-top: 20px;">
+            <input type="text" id="inputCari" onkeyup="cariProduk()" placeholder="Cari produk di sini... (misal: gerobak, ban, bearing)" style="width: 80%; max-width: 500px; padding: 12px 20px; font-size: 16px; border: 2px solid #ddd; border-radius: 25px; outline: none; box-shadow: 2px 2px 5px rgba(0,0,0,0.05);">
+        </div>
     </section>
 
     <!-- Bagian Daftar Produk -->
@@ -170,6 +175,24 @@ html
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
+<script>
+        // Fungsi untuk mencari dan menyaring produk otomatis
+        function cariProduk() {
+            let input = document.getElementById("inputCari").value.toLowerCase();
+            let kartuProduk = document.getElementsByClassName("produk-kartu");
 
+            for (let i = 0; i < kartuProduk.length; i++) {
+                // Mengambil teks judul dari masing-masing kartu produk (tag h3)
+                let judulProduk = kartuProduk[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+                
+                // Jika kata yang diketik cocok dengan judul produk, tampilkan kartu. Jika tidak, sembunyikan.
+                if (judulProduk.includes(input)) {
+                    kartuProduk[i].style.display = "flex";
+                } else {
+                    kartuProduk[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
