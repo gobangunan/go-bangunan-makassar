@@ -1,4 +1,3 @@
-html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -45,7 +44,37 @@ html
             transition: background-color 0.3s;
         }
         #btnKeAtas:hover { background-color: #333; }
+
+        /* Gaya Tombol WA Melayang */
+        .wa-melayang {
+            position: fixed;
+            bottom: 85px; /* Diletakkan sedikit di atas tombol back to top kemarin */
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            z-index: 100;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .wa-melayang:hover { transform: scale(1.1); background-color: #1ebd54; }
+
+        /* Gaya Ikon Sosial Media di Kontak */
+        .sosmed-wadah { margin-top: 15px; display: flex; justify-content: center; gap: 20px; }
+        .sosmed-link { text-decoration: none; font-weight: bold; padding: 8px 16px; border-radius: 20px; color: white; font-size: 14px; }
+        .fb-warna { background-color: #1877f2; }
+        .ig-warna { background-color: #e1306c; }
     </style>
+    <!-- Pustaka Ikon Font Awesome untuk Logo WA Resmi -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -146,6 +175,14 @@ html
         <h2>Hubungi Kami</h2>
         <p><strong>Alamat:</strong> Jl. Anuang No 63 D, Kota Makassar, Sulawesi Selatan</p>
         <p><strong>WhatsApp:</strong> +62 823-4843-3232</p>
+
+        <!-- Tombol Sosial Media Go Bangunan -->
+        <div class="sosmed-wadah">
+            <!-- Ganti LINK_FACEBOOK dengan tautan halaman FB Anda nanti -->
+            <a href="https://facebook.com" class="sosmed-link fb-warna" target="_blank">📘 Facebook</a>
+            <!-- Ganti LINK_INSTAGRAM dengan tautan akun IG Anda nanti -->
+            <a href="https://instagram.com" class="sosmed-link ig-warna" target="_blank">📸 Instagram</a>
+        </div>
         
         <!-- Peta Toko Jl Anuang No 63D Terpasang Otomatis -->
         <div class="maps-container">
@@ -194,5 +231,8 @@ html
             }
         }
     </script>
+    
+    <!-- Tombol WhatsApp Melayang -->
+    <a href="https://wa.me/6282348433232?text=Halo%20Go%20Bangunan,%20saya%20ingin%20bertanya?" class="wa-melayang" target="_blank" title="Chat via WhatsApp"><i class="fab fa-whatsapp"></i></a>
 </body>
 </html>
