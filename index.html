@@ -392,7 +392,6 @@
         // 5. Buka aplikasi WhatsApp di tab baru
         window.open("https://wa.me/" + nomorWA + "?text=" + pesanMentah, "_blank");
     }
-    </script>
     
         // Fungsi untuk mencari dan menyaring produk otomatis
         function cariProduk() {
@@ -405,7 +404,7 @@
                 
                 // Jika kata yang diketik cocok dengan judul produk, tampilkan kartu. Jika tidak, sembunyikan.
                 if (judulProduk.includes(input)) {
-                    kartuProduk[i].style.display = "flex";
+                    kartuProduk[i].style.display = "";
                 } else {
                     kartuProduk[i].style.display = "none";
                 }
