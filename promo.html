@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo Spesial - Go Bangunan Makassar</title>
+    <!-- Pustaka Ikon Font Awesome -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f7fa; margin: 0; padding: 0; color: #333; display: flex; justify-content: center; }
+        .wrapper { width: 100%; max-width: 480px; background: #ffffff; min-height: 100vh; padding: 30px 20px; box-shadow: 0 0 20px rgba(0,0,0,0.05); text-align: center; position: relative; }
+        
+        /* Header Profil */
+        .logo-toko { width: 90px; height: 90px; border-radius: 50%; background: #d32f2f; color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 32px; font-weight: bold; margin-bottom: 15px; border: 3px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h1 { font-size: 1.4em; margin: 0 0 5px 0; color: #2c3e50; }
+        .username { color: #7f8c8d; font-size: 0.9em; margin-bottom: 15px; }
+        
+        /* Lencana Status Toko Otomatis */
+        #statusTokoPromo { display: inline-block; padding: 6px 16px; border-radius: 20px; color: white; font-weight: bold; font-size: 0.85em; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        
+        /* Bagian Banner Promo */
+        .banner-promo { background: linear-gradient(135deg, #d32f2f, #e74c3c); color: white; padding: 20px; border-radius: 12px; margin-bottom: 25px; text-align: left; position: relative; overflow: hidden; box-shadow: 0 4px 15px rgba(211, 47, 47, 0.2); }
+        .banner-promo h2 { margin: 0 0 5px 0; font-size: 1.2em; }
+        .banner-promo p { margin: 0; font-size: 0.9em; opacity: 0.9; line-height: 1.4; }
+        
+        /* Judul Section */
+        .section-title { font-size: 1em; text-align: left; color: #2c3e50; font-weight: bold; margin: 20px 0 10px 0; padding-left: 5px; border-left: 4px solid #d32f2f; }
+        
+        /* Tombol Tautan / Link */
+        .link-tombol { display: flex; align-items: center; justify-content: space-between; background: #ffffff; border: 2px solid #eef2f5; padding: 16px 20px; border-radius: 12px; margin-bottom: 12px; text-decoration: none; color: #2c3e50; font-weight: bold; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.02); }
+        .link-tombol:hover { border-color: #25d366; background: #fafffa; transform: translateY(-2px); box-shadow: 0 6px 12px rgba(37, 211, 102, 0.1); }
+        .link-konten { display: flex; align-items: center; gap: 15px; }
+        .link-konten i { font-size: 20px; width: 25px; text-align: center; }
+        .fa-whatsapp { color: #25d366; }
+        .fa-store { color: #d32f2f; }
+        .fa-map-marker-alt { color: #3498db; }
+        .fa-chevron-right { color: #bdc3c7; font-size: 14px; }
+        
+        /* Footer */
+        footer { margin-top: 50px; font-size: 0.8em; color: #95a5a6; }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Kepala Profil -->
+        <div class="logo-toko">GB</div>
+        <h1>Go Bangunan Makassar</h1>
+        <div class="username">@gobangunan.mks</div>
+        
+        <!-- Status Toko Otomatis Terhubung WITA -->
+        <div id="statusTokoPromo">Memuat status toko...</div>
+
+        <!-- Kotak Highlight Promo Minggu Ini -->
+        <div class="banner-promo">
+            <h2><i class="fas fa-fire"></i> PROMO MINGGU INI!</h2>
+            <p>Dapatkan potongan harga khusus untuk pembelian <strong>Gerobak Pasir</strong> dan <strong>Cairan Anti Bocor Cap Jempol</strong> eceran maupun grosir.</p>
+        </div>
+
+        <div class="section-title">Hubungi & Transaksi</div>
+        
+        <!-- Link Chat WA Langsung -->
+        <a href="https://wa.me/6282348433232" target="_blank" class="link-tombol">
+            <div class="link-konten">
+                <i class="fab fa-whatsapp"></i>
+                <span>Tanya Promo via WhatsApp</span>
+            </div>
+            <i class="fas fa-chevron-right"></i>
+        </a>
+
+        <!-- Link ke Website Utama katalog -->
+        <a href="index.html" class="link-tombol">
+            <div class="link-konten">
+                <i class="fas fa-store"></i>
+                <span>Lihat Katalog Produk Lengkap</span>
+            </div>
+            <i class="fas fa-chevron-right"></i>
+        </a>
+
+        <div class="section-title">Lokasi Fisik Toko</div>
+
+        <!-- Link Penunjuk Jalan Google Maps -->
+        <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d993.4236889339466!2d119.42281812846733!3d-5.152736863989755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee2a67414fb21%3A0x4484dbcd10ee6bc9!2sJl.%20Anuang%20No.63D%2C%20Maricaya%20Sel.%2C%20Kec.%20Mamajang%2C%20Kota%20Makassar%2C%20Sulawesi%20Selatan%2090143!5e0!3m2!1sen!2sid!4v1780892008594!5m2!1sen!2sid"
+          target="_blank" class="link-tombol">
+            <div class="link-konten">
+              
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Petunjuk Arah Google Maps</span>
+            </div>
+            <i class="fas fa-chevron-right"></i>
+        </a>
+
+        <footer>
+            <p>&copy; 2026 Go Bangunan Makassar</p>
+        </footer>
+    </div>
+
+    <!-- Script Logika Jam Operasional WITA -->
+    <script>
+        function perbaruiStatusPromo() {
+            let elemenStatus = document.getElementById("statusTokoPromo");
+            if (!elemenStatus) return;
+            
+            let opsiWaktu = { timeZone: "Asia/Makassar", hour: "2-digit", hour12: false };
+            let opsiHari = { timeZone: "Asia/Makassar", weekday: "long" };
+            
+            let jamSekarang = parseInt(new Intl.DateTimeFormat("en-US", opsiWaktu).format(new Date()));
+            let hariSekarang = new Intl.DateTimeFormat("id-ID", opsiHari).format(new Date());
+
+            if (hariSekarang !== "Minggu" && jamSekarang >= 8 && jamSekarang < 17) {
+                elemenStatus.innerText = "🟢 Toko Sedang Buka (Respon Cepat)";
+                elemenStatus.style.backgroundColor = "#25d366";
+            } else {
+                elemenStatus.innerText = "🔴 Toko Tutup (Silakan Tinggalkan Pesan)";
+                elemenStatus.style.backgroundColor = "#d32f2f";
+            }
+        }
+        window.addEventListener("DOMContentLoaded", perbaruiStatusPromo);
+    </script>
+</body>
+</html>
