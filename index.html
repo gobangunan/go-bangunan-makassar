@@ -150,28 +150,39 @@
         <div class="produk-grid">
                
             <!-- Produk 1 -->
-            <div class="produk-kartu">
-                <img src="aspal-cair-jempol.jpg?v=2" alt="Cairan Aspal">
-                <h3>Cairan Anti Bocor Cap Jempol</h3>
-                <p class="harga">Rp 55.000/ Jergen</p>
-                <div>
-                
-            <!-- Dropdown Pilihan Kurir -->
-            <div style="margin: 10px 0; text-align: left;">
+<div class="produk-kartu">
+    <img src="aspal-cair-jempol.jpg?v=2" alt="Cairan Aspal">
+    <h3>Cairan Anti Bocor Cap Jempol</h3>
+    
+    <!-- Tampilan harga awal (1 Liter) diberi ID agar bisa berubah otomatis -->
+    <p class="harga" id="harga-jempol">Rp 55.000/Jergen</p>
+    
+    <div>
+        <!-- Dropdown Pilihan Ukuran Baru -->
+        <div style="margin: 10px 0; text-align: left;">
+            <label style="font-size: 0.85em; font-weight: bold; color: #555;">Pilih Ukuran:</label>
+            <select class="pilih-ukuran" onchange="ubahHargaJempol(this)" style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; background: #fff; font-weight: bold;">
+                <option value="1 Liter" data-harga="Rp 55.000/Jergen">1 Liter</option>
+                <option value="5 Liter" data-harga="Rp 200.000/Jergen">5 Liter</option> <!-- Silakan ganti Rp 250.000 dengan harga asli 5 Liter Anda -->
+            </select>
+        </div>
+
+        <!-- Dropdown Pilihan Kurir -->
+        <div style="margin: 10px 0; text-align: left;">
             <label style="font-size: 0.85em; font-weight: bold; color: #555;">Pilih Kurir:</label>
             <select class="pilih-kurir" style="width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; background: #fff;">
-            <option value="Kurir Instan (Gojek/Grab)">Kurir Instan (Gojek/Grab)</option>
-            <option value="Pengiriman Kargo (Luar Daerah)">Pengiriman Kargo (Luar Daerah)</option>
-            <option value="Ambil Sendiri di Toko">Ambil Sendiri di Toko</option>
-        </select>
-    </div>
+                <option value="Kurir Instan (Gojek/Grab)">Kurir Instan (Gojek/Grab)</option>
+                <option value="Pengiriman Kargo (Luar Daerah)">Pengiriman Kargo (Luar Daerah)</option>
+                <option value="Ambil Sendiri di Toko">Ambil Sendiri di Toko</option>
+            </select>
+        </div>
 
-            <!-- Tombol Beli Otomatis -->
-            <a href="#" class="btn-beli" data-nama="Cairan Anti Bocor Cap Jempol" onclick="kirimPesanan(event, this)">
+        <!-- Tombol Beli Otomatis -->
+        <a href="#" class="btn-beli" data-nama="Cairan Anti Bocor Cap Jempol" onclick="kirimPesananJempol(event, this)">
             <i class="fab fa-whatsapp"></i> Beli Sekarang
         </a>
-        </div>
     </div>
+</div>
             
             <!-- Produk 2 -->
             <div class="produk-kartu">
@@ -438,6 +449,38 @@
 
         // Jalankan fungsi otomatis saat halaman web dibuka pembeli
         window.addEventListener("DOMContentLoaded", perbaruiStatusToko);
+        </script>
+
+    <script>
+    // Fungsi untuk mengubah tampilan harga secara realtime saat ukuran dipilih
+function ubahHargaJempol(element) {
+    let hargaTerpilih = element.options[element.selectedIndex].getAttribute('data-harga');
+    document.getElementById('harga-jempol').innerText = hargaTerpilih;
+}
+
+// Fungsi khusus kirim pesanan Produk 1 ke WhatsApp dengan info Ukuran
+function kirimPesananJempol(event, element) {
+    event.preventDefault();
+    let namaProduk = element.getAttribute('data-nama');
+    let kartu = element.closest('.produk-kartu');
+    
+    // Mengambil nilai ukuran dan kurir yang dipilih pembeli
+    let ukuran = kartu.querySelector('.pilih-ukuran').value;
+    let kurir = kartu.querySelector('.pilih-kurir').value;
+    let hargaSaatIni = document.getElementById('harga-jempol').innerText;
+    
+    let nomorWA = "6282348433232"; // Ganti dengan nomor WhatsApp toko Anda
+    
+    let teksPesan = `Halo Go Bangunan Makassar, saya ingin memesan:\n\n` +
+                    `*Produk:* ${namaProduk}\n` +
+                    `*Ukuran:* ${ukuran}\n` +
+                    `*Harga:* ${hargaSaatIni}\n` +
+                    `*Pilihan Kurir:* ${kurir}\n\n` +
+                    `Mohon informasi total harga dan ongkos kirimnya, terima kasih.`;
+                    
+   let urlWA = `https://api.whatsapp.com/send?phone=6282348433232&text=${encodeURIComponent(teksPesan)}`;
+    window.open(urlWA, '_blank');
+}
     </script>
 </body>
 </html>
